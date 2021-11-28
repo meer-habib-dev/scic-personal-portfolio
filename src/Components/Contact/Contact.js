@@ -1,7 +1,30 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./Contact.css";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
+  const form = useRef();
+  const sendMail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_5int08o",
+        "template_cx8gck2",
+        form.current,
+        "user_kBDHG7xVD5tbyVpxj2sCR"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    // e.target.reset();
+  };
+
   return (
     <div className="contact-section ">
       <div className="container grid grid-cols-2 gap-6 my-20 items-center">
@@ -12,39 +35,45 @@ const Contact = () => {
             088574 or email: admin@example.com
           </p>
           <div>
-            <input
-              className="py-2 px-2 w-full rounded border-2 mb-4"
-              type="text"
-              placeholder="Your Name"
-            />
-            <br />
-            <input
-              className="py-2 px-2 w-full rounded border-2 mb-4"
-              type="text"
-              placeholder="Your Email"
-            />
-            <br />
-            <input
-              className="py-2 px-2 w-full rounded border-2 mb-4"
-              type="text"
-              placeholder="Write Desire Subject"
-            />
-            <br />
+            <form ref={form} onClick={sendMail}>
+              <input
+                className="py-2 px-2 w-full rounded border-2 mb-4"
+                type="text"
+                name="name"
+                placeholder="Your Name"
+              />
+              <br />
+              <input
+                className="py-2 px-2 w-full rounded border-2 mb-4"
+                type="email"
+                name="email"
+                placeholder="Your Email"
+              />
+              <br />
+              <input
+                className="py-2 px-2 w-full rounded border-2 mb-4"
+                type="text"
+                name="subject"
+                placeholder="Write Desire Subject"
+              />
+              <br />
 
-            <textarea
-              rows="5"
-              className="py-2 px-2 w-full rounded border-2 mb-4"
-              type="text"
-              placeholder="Write Your Message"
-            />
-            <br />
-            <button
-              button
-              className="w-full py-2 bg text-white font-bold rounded"
-            >
-              {" "}
-              Submit
-            </button>
+              <textarea
+                rows="5"
+                className="py-2 px-2 w-full rounded border-2 mb-4"
+                type="text"
+                name="message"
+                placeholder="Write Your Message"
+              />
+              <br />
+              <button
+                type="submit"
+                className="w-full py-2 bg text-white font-bold rounded"
+              >
+                {" "}
+                Submit
+              </button>
+            </form>
           </div>
         </div>
         <div className="contact-img">
