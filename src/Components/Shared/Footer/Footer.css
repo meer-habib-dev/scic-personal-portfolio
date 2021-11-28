@@ -1,0 +1,11 @@
+.social-icons .icons-item {
+  border: 2px solid gray;
+  background: transparent;
+  transition: all 0.1s ease-in-out;
+}
+.social-icons .icons-item:hover {
+  border: 2px solid #f9004d;
+  background: #f9004d;
+  color: white;
+  transform: translateY(-2px);
+}

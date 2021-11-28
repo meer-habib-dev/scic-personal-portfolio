@@ -1,0 +1,22 @@
+.home-section {
+  background: #181818;
+}
+.image-container {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  /* border: 1px solid black; */
+  z-index: 10;
+  overflow: hidden;
+  box-shadow: 3px 3px 3px #d0d0d0, -3px -3px 3px #f8f8f8;
+}
+.image-container img {
+}
+
+.home-text-container .wave {
+  animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.1s; /* Change to speed up or slow down */
+  animation-iteration-count: infinite; /* Never stop waving :) */
+  transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
