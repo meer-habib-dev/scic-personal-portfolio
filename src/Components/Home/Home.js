@@ -6,9 +6,11 @@ import Type from "./Type/Type";
 import Footer from "../Shared/Footer/Footer";
 import Projects from "../Projects/Projects";
 import Contact from "../Contact/Contact";
+import Navigation from "../Shared/Navigation/Navigation";
 const Home = () => {
   return (
     <>
+      <Navigation></Navigation>
       <div>
         <div className=" home-section w-screen h-screen flex flex-col items-center justify-center">
           <div className="image-container">

@@ -1,0 +1,15 @@
+.nav-section {
+  position: absolute;
+  top: 20px;
+  left: 120px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-container a {
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 10px;
+  color: white;
+}
