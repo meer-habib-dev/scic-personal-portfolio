@@ -1,29 +1,40 @@
 import React from "react";
 import "./Home.css";
-import { boss } from "../../images/boss.JPG";
-import { Link } from "react-router-dom";
 import Type from "./Type/Type";
 import Footer from "../Shared/Footer/Footer";
 import Projects from "../Projects/Projects";
 import Contact from "../Contact/Contact";
 import Navigation from "../Shared/Navigation/Navigation";
+import Progress from "./Progress/Progress";
+import Bounce from "react-reveal/Bounce";
+import Zoom from "react-reveal/Zoom";
+import Jump from "react-reveal/Jump";
 const Home = () => {
   return (
     <>
       <Navigation></Navigation>
-      <div>
-        <div className=" home-section w-screen h-screen flex flex-col items-center justify-center">
-          <div className="image-container">
-            <img src="https://i.ibb.co/Bq62DxZ/video-gig-image.jpg" alt="" />
-          </div>
+      <section id="home">
+        <div className=" home-section  h-screen flex flex-col items-center justify-center">
+          <Bounce>
+            <div className="image-container mt-10">
+              <img src="https://i.ibb.co/Bq62DxZ/video-gig-image.jpg" alt="" />
+            </div>
+          </Bounce>
           <div className="home-text-container flex">
             <p className="heading-name">
-              <strong className="text-2xl ml-3 text-white">
-                This is Meer_Habib
+              <strong className="text-2xl ml-3  text-white">
+                <div className="flex">
+                  <Zoom left cascade>
+                    This is Me
+                  </Zoom>
+                  <Zoom right cascade>
+                    er_Habib
+                  </Zoom>
+                </div>
               </strong>
             </p>
           </div>
-          <div style={{ padding: 20 }}>
+          <div style={{ padding: 10 }}>
             <p className="text-3xl font-bold color text-center">
               <Type />
             </p>
@@ -33,20 +44,27 @@ const Home = () => {
               href="https://drive.google.com/file/d/1XqrIhCCajUiCRaTl4mJXxKnuxxjc0PF1/view?usp=sharing"
               target="_blank"
             >
-              <button className="w-40 bg hover:text-black hover:bg-white transition hover:border-2 px-3 py-2 text-white font-bold rounded mr-2">
-                Download CV
-              </button>
+              <Jump>
+                <button className=" btn-hover w-40 bg-white border-2 text-black transition px-3 py-2 hover:bg hover:text-white hover:bg ml-2 font-bold rounded">
+                  Download CV
+                </button>
+              </Jump>
             </a>
             <a href="https://github.com/meer-habib-dev" target="_blank">
-              <button className=" w-40 bg-white border-2 text-black transition px-3 py-2 hover:bg hover:text-white ml-2 font-bold rounded">
+              <Jump>
+
+              <button className=" btn-hover w-40 bg-white border-2 text-black transition px-3 py-2 hover:bg hover:text-white hover:bg ml-2 font-bold rounded">
                 Visit GitHub
               </button>
+              </Jump>
             </a>
           </div>
         </div>
-      </div>
+      </section>
       {/* Projects Section starts Here */}
       <Projects></Projects>
+      {/* Skill progress starts here */}
+      <Progress></Progress>
       {/* contact page starts here */}
       <Contact></Contact>
       <Footer></Footer>

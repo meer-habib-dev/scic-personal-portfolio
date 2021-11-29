@@ -13,3 +13,7 @@
   margin-right: 10px;
   color: white;
 }
+.nav-position {
+  width: 100%;
+  z-index: 100;
+}
