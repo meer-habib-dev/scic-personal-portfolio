@@ -7,6 +7,7 @@ import Footer from "../Shared/Footer/Footer";
 import Projects from "../Projects/Projects";
 import Contact from "../Contact/Contact";
 import Navigation from "../Shared/Navigation/Navigation";
+import ProgressBar from 'react-animated-progress-bar';
 const Home = () => {
   return (
     <>
@@ -45,6 +46,20 @@ const Home = () => {
           </div>
         </div>
       </div>
+      {/* Progress bars */}
+      <ProgressBar width="230" trackWidth="13" percentage="60" />
+      <ProgressBar
+        width="400px"
+        height="10px"
+        rect
+        fontColor="gray"
+        percentage="70"
+        rectPadding="1px"
+        rectBorderRadius="20px"
+        trackPathColor="transparent"
+        bgColor="#333333"
+        trackBorderColor="grey"
+      />
       {/* Projects Section starts Here */}
       <Projects></Projects>
       {/* contact page starts here */}
