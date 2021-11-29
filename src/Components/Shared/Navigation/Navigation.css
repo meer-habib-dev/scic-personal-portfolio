@@ -15,5 +15,9 @@
 }
 .nav-position {
   width: 100%;
+}
+
+.fixedNav {
+  width: 100%;
   z-index: 100;
 }

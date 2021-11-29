@@ -10,7 +10,7 @@ const Navigation = () => {
   };
   return (
     <Fade top big>
-      <div className="hidden md:block">
+      <div className="hidden md:block fixed fixedNav">
         <div className="nav-position fixed">
           <div className="w-10/12  bg nav-section rounded px-4 py-3 mx-auto flex justify-between items-center">
             {/* <div className="w-10/12  nav-section rounded px-4 py-3 mx-auto flex justify-between items-center"> */}

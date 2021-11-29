@@ -8,6 +8,7 @@ import Bounce from "react-reveal/Bounce";
 const Contact = () => {
   const form = useRef();
   const sendMail = (e) => {
+    console.log(form);
     e.preventDefault();
 
     emailjs
@@ -20,9 +21,15 @@ const Contact = () => {
       .then(
         (result) => {
           console.log(result.text);
+          if (result.text === "OK") {
+            alert("Mail Send Successfully!!");
+          }
         },
         (error) => {
           console.log(error.text);
+          if (error.text) {
+            alert("Something wrong. Try Again...");
+          }
         }
       );
     // e.target.reset();
@@ -47,6 +54,7 @@ const Contact = () => {
                 type="text"
                 name="name"
                 placeholder="Your Name"
+                required
               />
               <br />
               <input
@@ -54,12 +62,14 @@ const Contact = () => {
                 type="email"
                 name="email"
                 placeholder="Your Email"
+                required
               />
               <br />
               <input
                 className="py-2 px-2 w-full rounded border-2 mb-4"
                 type="text"
                 name="subject"
+                required
                 placeholder="Write Desire Subject"
               />
               <br />
@@ -69,6 +79,7 @@ const Contact = () => {
                 className="py-2 px-2 w-full rounded border-2 mb-4"
                 type="text"
                 name="message"
+                required
                 placeholder="Write Your Message"
               />
               <br />
